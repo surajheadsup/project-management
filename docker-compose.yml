@@ -5,7 +5,7 @@ volumes:
 
 services:
   sqldb:
-    image: mysql:5.7
+    image: mysql:latest
     container_name: helper-mysql
     volumes:
       - mysql_data:/var/lib/mysql
@@ -33,10 +33,10 @@ services:
       - DB_USERNAME=helper
       - DB_PASSWORD=helper
       - MAIL_MAILER=smtp
-      - MAIL_HOST=smtp.mailtrap.io
-      - MAIL_PORT=2525
-      - MAIL_USERNAME=your_username
-      - MAIL_PASSWORD=your_password
+      - MAIL_HOST=smtp.gmail.com
+      - MAIL_PORT=587
+      - MAIL_USERNAME=tech@headsupcorporation.com
+      - MAIL_PASSWORD=jjscktfmiwbkuvzx
       - MAIL_ENCRYPTION=tls
     depends_on:
       - sqldb

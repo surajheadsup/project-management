@@ -7,6 +7,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use App\Http\Controllers\RoadMap\DataController;
 use App\Http\Controllers\Auth\OidcAuthController;
 
+
 // Share ticket
 Route::get('/tickets/share/{ticket:code}', function (Ticket $ticket) {
     return redirect()->to(route('filament.resources.tickets.view', $ticket));
@@ -35,4 +36,14 @@ Route::name('oidc.')
     ->group(function () {
         Route::get('redirect', [OidcAuthController::class, 'redirect'])->name('redirect');
         Route::get('callback', [OidcAuthController::class, 'callback'])->name('callback');
+    });
+    Route::get('send-mail', function () {
+        $details = [
+            'title' => 'Mail from YourAppName',
+            'body' => 'This is a test email sent using Gmail SMTP in Laravel. suraj'
+        ];
+
+        Mail::to('suraj@headsupcorporation.com')->send(new \App\Mail\MyMail($details));
+
+        return "Email sent successfully!";
     });
