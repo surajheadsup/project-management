@@ -135,9 +135,11 @@ class SprintsRelationManager extends RelationManager
                     ->button()
                     ->icon('heroicon-o-play')
                     ->action(function ($record) {
-                        $now = now();
-                        $record->started_at = $now;
-                        $record->save();
+                        // $now = now();
+                        // $record->started_at = $now;
+                        // $record->save();
+
+                        $record->update(['started_at' => $now]);
                         
                         Notification::make('sprint_started')
                             ->success()
