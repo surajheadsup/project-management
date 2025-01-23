@@ -165,23 +165,23 @@ class SprintsRelationManager extends RelationManager
                             ->send();
                     }),
 
-                Tables\Actions\Action::make('stop')
-                    ->label(__('Stop sprint'))
-                    ->visible(fn($record) => $record->started_at && !$record->ended_at)
-                    ->requiresConfirmation()
-                    ->color('danger')
-                    ->button()
-                    ->icon('heroicon-o-pause')
-                    ->action(function ($record) {
-                        $now = now();
-                        $record->ended_at = $now;
-                        $record->save();
+                // Tables\Actions\Action::make('stop')
+                //     ->label(__('Stop sprint'))
+                //     ->visible(fn($record) => $record->started_at && !$record->ended_at)
+                //     ->requiresConfirmation()
+                //     ->color('danger')
+                //     ->button()
+                //     ->icon('heroicon-o-pause')
+                //     ->action(function ($record) {
+                //         $now = now();
+                //         $record->ended_at = $now;
+                //         $record->save();
 
-                        Notification::make('sprint_started')
-                            ->success()
-                            ->body(__('Sprint ended at') . ' ' . $now)
-                            ->send();
-                    }),
+                //         Notification::make('sprint_started')
+                //             ->success()
+                //             ->body(__('Sprint ended at') . ' ' . $now)
+                //             ->send();
+                //     }),
 
                 Tables\Actions\Action::make('tickets')
                     ->label(__('Tickets'))
