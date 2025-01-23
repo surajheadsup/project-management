@@ -135,12 +135,14 @@ class SprintsRelationManager extends RelationManager
                     ->button()
                     ->icon('heroicon-o-play')
                     ->action(function ($record) {
-                        // $now = now();
-                        // $record->started_at = $now;
-                        // $record->save();
-
-                        $record->update(['started_at' => $now]);
-                        
+                        $now = now();
+                        // Sprint::where('project_id', $record->project_id)
+                        //     ->where('id', '<>', $record->id)
+                        //     ->whereNotNull('started_at')
+                        //     ->whereNull('ended_at')
+                        //     ->update(['ended_at' => $now]);
+                        $record->started_at = $now;
+                        $record->save();
                         Notification::make('sprint_started')
                             ->success()
                             ->body(__('Sprint started at') . ' ' . $now)
@@ -175,7 +177,7 @@ class SprintsRelationManager extends RelationManager
                         $record->ended_at = $now;
                         $record->save();
 
-                        Notification::make('sprint_ended')
+                        Notification::make('sprint_started')
                             ->success()
                             ->body(__('Sprint ended at') . ' ' . $now)
                             ->send();
