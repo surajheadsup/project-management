@@ -136,11 +136,11 @@ class SprintsRelationManager extends RelationManager
                     ->icon('heroicon-o-play')
                     ->action(function ($record) {
                         $now = now();
-                        Sprint::where('project_id', $record->project_id)
-                            ->where('id', '<>', $record->id)
-                            ->whereNotNull('started_at')
-                            ->whereNull('ended_at')
-                            ->update(['ended_at' => $now]);
+                        // Sprint::where('project_id', $record->project_id)
+                        //     ->where('id', '<>', $record->id)
+                        //     ->whereNotNull('started_at')
+                        //     ->whereNull('ended_at')
+                        //     ->update(['ended_at' => $now]);
                         $record->started_at = $now;
                         $record->save();
                         Notification::make('sprint_started')
