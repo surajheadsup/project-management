@@ -47,3 +47,8 @@ Route::name('oidc.')
 
         return "Email sent successfully!";
     });
+
+
+Route::get('/test-protocol', function () {
+    return request()->secure() ? 'HTTPS' : 'HTTP';
+});

@@ -129,7 +129,7 @@ class SprintsRelationManager extends RelationManager
             ->actions([
                 Tables\Actions\Action::make('start')
                     ->label(__('Start sprint'))
-                    ->visible(fn($record) => !$record->started_at && !$record->ended_at)
+                  //  ->visible(fn($record) => !$record->started_at && !$record->ended_at)
                     ->requiresConfirmation()
                     ->color('success')
                     ->button()
@@ -139,7 +139,7 @@ class SprintsRelationManager extends RelationManager
                         // $record->started_at = $now;
                         // $record->save();
 
-                        $record->update(['started_at' => $now]);
+                       // $record->update(['started_at' => $now]);
                         
                         Notification::make('sprint_started')
                             ->success()
