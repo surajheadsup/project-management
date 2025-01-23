@@ -129,20 +129,18 @@ class SprintsRelationManager extends RelationManager
             ->actions([
                 Tables\Actions\Action::make('start')
                     ->label(__('Start sprint'))
-                    ->visible(fn($record) => !$record->started_at && !$record->ended_at)
+                  //  ->visible(fn($record) => !$record->started_at && !$record->ended_at)
                     ->requiresConfirmation()
                     ->color('success')
                     ->button()
                     ->icon('heroicon-o-play')
                     ->action(function ($record) {
-                        $now = now();
-                        // Sprint::where('project_id', $record->project_id)
-                        //     ->where('id', '<>', $record->id)
-                        //     ->whereNotNull('started_at')
-                        //     ->whereNull('ended_at')
-                        //     ->update(['ended_at' => $now]);
-                        $record->started_at = $now;
-                        $record->save();
+                        // $now = now();
+                        // $record->started_at = $now;
+                        // $record->save();
+
+                       // $record->update(['started_at' => $now]);
+                        
                         Notification::make('sprint_started')
                             ->success()
                             ->body(__('Sprint started at') . ' ' . $now)

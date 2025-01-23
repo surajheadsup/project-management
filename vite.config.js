@@ -11,4 +11,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        manifest: true,       // Generate manifest.json
+        outDir: 'public/build', // Place build files in public/build
+        assetsDir: '',         // Avoid nested asset directories
+    },
 });
