@@ -21,14 +21,14 @@ services:
       - laravel
 
   helper:
-    image: hcorptech/helper:latest
+    image: ded8dce9a6db
     container_name: helper-server
     environment:
       - APP_NAME="Headsup"
       - APP_ENV=local
       - APP_KEY=base64:+0xg6G92HAiiSxHp6THR+cu9jCttAc5jbbb7id2Rq8c=
       - APP_DEBUG=true
-      - APP_URL=https://stg-projects.headsupcorporation.com
+      - APP_URL=https://projects.headsupcorporation.com
       - APP_FORCE_HTTPS=true
       - DB_CONNECTION=mysql
       - DB_HOST=sqldb
@@ -66,8 +66,8 @@ services:
       - 443:443
     volumes:
       - ./apache-conf:/usr/local/apache2/conf/extra:ro
-      - /etc/letsencrypt/archive/stg-projects.headsupcorporation.com/fullchain1.pem:/etc/ssl/certs/fullchain.pem:ro
-      - /etc/letsencrypt/archive/stg-projects.headsupcorporation.com/privkey1.pem:/etc/ssl/private/privkey.pem:ro
+      - /etc/letsencrypt/archive/projects.headsupcorporation.com/fullchain1.pem:/etc/ssl/certs/fullchain.pem:ro
+      - /etc/letsencrypt/archive/projects.headsupcorporation.com/privkey1.pem:/etc/ssl/private/privkey.pem:ro
       - apache_logs:/usr/local/apache2/logs
     depends_on:
       - helper

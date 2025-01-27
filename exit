@@ -1,0 +1,74 @@
+[33mcommit a5f83736b159c26f0e5f81c7656dc0d0bc78c13a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: surajheadsup <surajkumarmca15@gmail.com>
+Date:   Fri Jan 10 17:37:44 2025 +0530
+
+    env file changes app url changes
+
+[33mcommit 57b4d4a9b942649a615dcb68b132a116cdff2848[m
+Author: surajheadsup <surajkumarmca15@gmail.com>
+Date:   Fri Jan 10 17:31:05 2025 +0530
+
+    env file changes app url changes
+
+[33mcommit ddbefac94454243097d722f12d2185c491363d2f[m
+Author: surajheadsup <surajkumarmca15@gmail.com>
+Date:   Fri Jan 10 17:16:59 2025 +0530
+
+    docker file changes witrh hcoprtech/heklper
+
+[33mcommit 6c3cc78f59f8163412ef016ee961b46de6950820[m
+Author: surajheadsup <surajkumarmca15@gmail.com>
+Date:   Fri Jan 10 14:54:48 2025 +0530
+
+    env added
+
+[33mcommit 77786a86b6604600465855defef093b241c9e9b4[m
+Author: surajheadsup <surajkumarmca15@gmail.com>
+Date:   Fri Jan 10 14:41:48 2025 +0530
+
+    emial working
+
+[33mcommit 54982160896d8371ba79c8dc20ed65936878d91b[m
+Merge: c850876 344dc53
+Author: Mihai Solomon <mihai.c.solomon@gmail.com>
+Date:   Mon Mar 18 12:18:19 2024 +0200
+
+    Merge pull request #108 from Hussam92/master
+    
+    Bugfix: Default TicketType updates wrong Model
+
+[33mcommit c850876286edc2bd2d3b85fa17b1cf95f8469dbb[m
+Merge: c6e8d89 143ec06
+Author: Mihai Solomon <mihai.c.solomon@gmail.com>
+Date:   Mon Mar 18 12:15:48 2024 +0200
+
+    Merge pull request #110 from Hussam92/reorderable-ticket-statuses
+    
+    Improvement: Make TicketStatus orderable
+
+[33mcommit 143ec06e228baa7b9620c3a0ce14c747382311b1[m
+Author: Hussam Itani <hussam.itani@coupon-family.de>
+Date:   Sun Mar 17 14:48:33 2024 +0100
+
+    Improvement: Make TicketStatus orderable
+
+[33mcommit 344dc539d4cafc826b7c4eb406dd9bf5a3e8020c[m
+Author: Hussam Itani <hussam.itani@coupon-family.de>
+Date:   Sun Mar 17 14:16:34 2024 +0100
+
+    Bugfix: Default TicketType does not updates wrong Model
+
+[33mcommit c6e8d89d3a5b2abecc2bb7185c6f89d4a25d6ebd[m
+Merge: 48d5046 adc329d
+Author: Mihai Solomon <mihai.c.solomon@gmail.com>
+Date:   Fri Sep 15 11:33:08 2023 +0300
+
+    Merge pull request #93 from devaslanphp/feature/default-value-on-settings
+    
+    Default value on locked settings
+
+[33mcommit adc329d2154816b097f2aacbb5c1307a07fbbd33[m
+Author: Mihai Solomon <mihai.c.solomon@gmail.com>
+Date:   Fri Sep 15 11:31:38 2023 +0300
+
+    Default value on locked settings
