@@ -113,10 +113,22 @@ trait KanbanScrumHelper
         $query->with(['project', 'owner', 'responsible', 'status', 'type', 'priority', 'epic']);
         $query->where('project_id', $this->project->id);
         if (sizeof($this->users)) {
-            $query->where(function ($query) {
-                return $query->whereIn('owner_id', $this->users)
-                    ->orWhereIn('responsible_id', $this->users);
-            });
+            // $query->where(function ($query) {
+            //     return $query->whereIn('owner_id', $this->users)
+            //         ->orWhereIn('responsible_id', $this->users);
+            // });
+            // Check if the logged-in user is the owner of the project
+            if ($this->project && $this->project->owner_id === auth()->user()->id) {
+                // If the owner is logged in, show all tickets where they are responsible or assigned as the owner
+                $query->where(function ($query) {
+                    $query->where('owner_id', auth()->user()->id)
+                        ->orWhere('responsible_id', auth()->user()->id);
+                });
+            } else {
+                // If an employee (not the project owner) is logged in, only show their responsible tickets
+                $query->where('responsible_id', auth()->user()->id);
+            }
+
         }
         if (sizeof($this->types)) {
             $query->whereIn('type_id', $this->types);
